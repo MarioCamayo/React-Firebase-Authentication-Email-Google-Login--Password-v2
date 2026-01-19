@@ -1,12 +1,13 @@
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase/firebase";
+import './dashboard.css'
 
 
 export default function Dashboard({ user }) {
   return (
     <div className="dashboard-container">
       <div className="dashboard-card">
-        <img src={user.photoURL} alt="avatar" />
+        <img className="dashboard-image" src={user.photoURL} alt="avatar" />
         <h1>Welcome {user.displayName || user.email}</h1>
         <p>{user.email}</p>
 
