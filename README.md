@@ -1,16 +1,133 @@
-# React + Vite
+# 🔐 React + Firebase Authentication
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto de aprendizaje desarrollado con **React (Vite)** y **Firebase Authentication**, enfocado en implementar un sistema de autenticación moderno y seguro con **login por Google** y **email/contraseña**, además de un **dashboard protegido** y despliegue en producción con **Vercel**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Demo en producción
 
-## React Compiler
+🔗 **Aplicación:**
+[https://react-firebase-authentication-psi.vercel.app](https://react-firebase-authentication-psi.vercel.app)
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+📂 **Repositorio:**
+[https://github.com/MarioCamayo/React-Firebase-Authentication-Email-Google-Login--Password-v2](https://github.com/MarioCamayo/React-Firebase-Authentication-Email-Google-Login--Password-v2)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧩 Funcionalidades principales
+
+* ✅ Autenticación con **Google**
+* ✅ Login con **email y contraseña**
+* ✅ Registro de usuarios
+* ✅ Manejo de sesión (Auth Context)
+* ✅ Protección de rutas privadas
+* ✅ Dashboard accesible solo para usuarios autenticados
+* ✅ Cierre de sesión (logout)
+* ✅ Deploy en **Vercel**
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+* ⚛️ **React** (Vite)
+* 🔥 **Firebase Authentication**
+* 📦 **Context API**
+* 🎨 **CSS**
+* ☁️ **Vercel** (deploy)
+
+---
+
+## 📁 Estructura del proyecto
+
+```bash
+src/
+│
+├── components/
+│   ├── Login/
+│   │   ├── Login.jsx
+│   │   └── login.css
+│   │
+│   ├── context/
+│   │   └── AuthContext.jsx
+│   │
+│   ├── dashboard/
+│   │   ├── Dashboard.jsx
+│   │   └── dashboard.css
+│   │
+│   └── firebase/
+│       └── firebase.js
+│
+├── App.jsx
+├── main.jsx
+└── index.css
+```
+
+---
+
+## 🔑 Configuración de Firebase
+
+1. Crear un proyecto en **Firebase Console**
+2. Habilitar **Authentication**
+
+   * Google
+   * Email/Password
+3. Crear un archivo `firebase.js` con tus credenciales:
+
+```js
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
+
+const firebaseConfig = {
+  apiKey: "TU_API_KEY",
+  authDomain: "TU_AUTH_DOMAIN",
+  projectId: "TU_PROJECT_ID",
+  appId: "TU_APP_ID",
+};
+
+export const app = initializeApp(firebaseConfig);
+export const auth = getAuth(app);
+```
+
+⚠️ **Nota:** No subas tus credenciales reales a producción sin variables de entorno.
+
+---
+
+## ▶️ Instalación y uso local
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/MarioCamayo/React-Firebase-Authentication-Email-Google-Login--Password-v2
+
+# Entrar al proyecto
+cd React-Firebase-Authentication-Email-Google-Login--Password-v2
+
+# Instalar dependencias
+npm install
+
+# Ejecutar en desarrollo
+npm run dev
+```
+
+---
+
+## 📌 Aprendizajes clave
+
+* Uso real de **Firebase Authentication**
+* Manejo de sesión con **Context API**
+* Protección de rutas privadas
+* Flujo completo: desarrollo → deploy
+* Buenas prácticas en proyectos React
+
+---
+
+## 👨‍💻 Autor
+
+**Mario Camayo**
+Desarrollador Web
+Apasionado por React y el desarrollo FullStack 🚀
+
+---
+
+## 📄 Licencia
+
+Este proyecto es de uso libre con fines educativos.
